@@ -253,7 +253,7 @@ export default function JoinAsTherapistPage() {
             {/* ─── STEP 1: Personal Info ─── */}
             {step === 1 && (
               <FormCard title="Personal Information" subtitle="Your basic contact and location details.">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Field label="First Name *" placeholder="Priya" value={personal.firstName} onChange={v => setPersonal({...personal, firstName: v})} />
                   <Field label="Last Name *" placeholder="Sharma" value={personal.lastName} onChange={v => setPersonal({...personal, lastName: v})} />
                 </div>
@@ -270,8 +270,8 @@ export default function JoinAsTherapistPage() {
                     ))}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="col-span-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="sm:col-span-2">
                     <Field label="City *" placeholder="Bangalore" value={personal.city} onChange={v => setPersonal({...personal, city: v})} icon={MapPin} />
                   </div>
                   <Field label="State" placeholder="Karnataka" value={personal.state} onChange={v => setPersonal({...personal, state: v})} />
@@ -280,7 +280,7 @@ export default function JoinAsTherapistPage() {
                 {/* Account credentials */}
                 <div className="border-t border-slate-200 pt-4 mt-2">
                   <p className="text-sm font-bold text-slate-700 mb-3">Create Your Account Password</p>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Field label="Password *" placeholder="Min. 6 characters" value={personal.password} onChange={v => setPersonal({...personal, password: v})} type="password" icon={EyeOff} />
                     <div>
                       <Field label="Confirm Password *" placeholder="Re-enter password" value={personal.confirmPassword} onChange={v => setPersonal({...personal, confirmPassword: v})} type="password" icon={EyeOff} />
@@ -324,7 +324,7 @@ export default function JoinAsTherapistPage() {
                 </div>
 
                 {/* Registration */}
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Regulatory Body *</label>
                     <select value={professional.regBody} onChange={e => setProfessional({...professional, regBody: e.target.value})}
@@ -332,7 +332,7 @@ export default function JoinAsTherapistPage() {
                       {['RCI', 'MCI', 'INC', 'AOTA', 'Other'].map(r => <option key={r}>{r}</option>)}
                     </select>
                   </div>
-                  <div className="col-span-2">
+                  <div className="sm:col-span-2">
                     <Field label="Registration Number *" placeholder="e.g. RCI-12345" value={professional.regNumber} onChange={v => setProfessional({...professional, regNumber: v})} icon={Award} />
                   </div>
                 </div>
@@ -411,14 +411,14 @@ export default function JoinAsTherapistPage() {
                 {/* Mode */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Consultation Mode *</label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {[
                       { v: 'online',    l: 'Online Only',    icon: Video,      desc: 'Video call sessions' },
                       { v: 'in-clinic', l: 'In-Clinic Only', icon: Building2,  desc: 'At your clinic / hospital' },
                       { v: 'both',      l: 'Both',           icon: Globe,      desc: 'Online + In-Clinic' },
                     ].map(({ v, l, icon: Icon, desc }) => (
                       <button key={v} onClick={() => setPractice({...practice, mode: v as any})}
-                        className={`flex flex-col items-center gap-1.5 p-3.5 rounded-xl border-2 text-sm font-semibold transition-all ${practice.mode === v ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-slate-200 text-slate-500 hover:border-brand-300'}`}>
+                        className={`flex sm:flex-col items-center gap-3 sm:gap-1.5 p-3.5 rounded-xl border-2 text-sm font-semibold transition-all ${practice.mode === v ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-slate-200 text-slate-500 hover:border-brand-300'}`}>
                         <Icon size={18} />
                         <span>{l}</span>
                         <span className="text-xs font-normal opacity-60">{desc}</span>
@@ -437,7 +437,7 @@ export default function JoinAsTherapistPage() {
                 )}
 
                 {/* Fee & Duration */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-1.5">Session Fee (₹) *</label>
                     <div className="relative">

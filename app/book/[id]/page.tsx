@@ -92,7 +92,7 @@ export default function BookingPage() {
     <div className="min-h-screen bg-slate-50">
       <Header />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-24 pb-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16">
         {/* Back */}
         <Link
           href={`/therapist/${therapist.id}`}
@@ -272,7 +272,7 @@ export default function BookingPage() {
                 </div>
 
                 <FormField label="Patient's Full Name" icon={User} placeholder="Full name" value={form.patientName} onChange={(v) => setForm({ ...form, patientName: v })} />
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormField label="WhatsApp Number" icon={Phone} placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} type="tel" />
                   <FormField label="Patient Age" icon={User} placeholder="Age in years" value={form.age} onChange={(v) => setForm({ ...form, age: v })} type="number" />
                 </div>

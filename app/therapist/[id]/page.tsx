@@ -36,7 +36,7 @@ export default function TherapistProfilePage() {
     <div className="min-h-screen bg-slate-50">
       <Header />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16">
         {/* Breadcrumb */}
         <Link
           href="/find-therapist"
@@ -75,7 +75,7 @@ export default function TherapistProfilePage() {
                   </div>
 
                   {/* Meta row */}
-                  <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-slate-600">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-3 text-sm text-slate-600">
                     <div className="flex items-center gap-1">
                       <Star size={14} className="text-yellow-400 fill-yellow-400" />
                       <span className="font-bold text-slate-900">{therapist.rating}</span>

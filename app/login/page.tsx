@@ -45,7 +45,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-950 via-brand-900 to-slate-900 flex items-center justify-center px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-brand-950 via-brand-900 to-slate-900 flex items-center justify-center px-4 py-8 sm:py-16">
 
       {/* Background blobs */}
       <div className="absolute inset-0 opacity-20 pointer-events-none"
@@ -85,7 +85,7 @@ export default function LoginPage() {
             ))}
           </div>
 
-          <div className="p-8">
+          <div className="p-5 sm:p-8">
             <h2 className="text-xl font-bold text-slate-900 mb-1">Welcome back</h2>
             <p className="text-slate-500 text-sm mb-6">
               {tab === 'patient' ? 'Sign in to manage your bookings and sessions.' : 'Sign in to access your doctor dashboard.'}

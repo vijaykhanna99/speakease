@@ -97,7 +97,7 @@ export default function DoctorDashboardPage() {
     <div className="min-h-screen bg-slate-50">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-16">
 
         {/* Top header */}
         <div className="flex items-start justify-between py-6 flex-wrap gap-4">
@@ -125,16 +125,16 @@ export default function DoctorDashboardPage() {
             { label: 'Average Rating',    value: '4.9',     sub: '287 reviews',            icon: Star,        color: 'text-yellow-600 bg-yellow-50', trend: null   },
             { label: 'Sessions Today',    value: '2',       sub: '15 this week',           icon: Calendar,    color: 'text-purple-600 bg-purple-50', trend: null   },
           ].map(stat => (
-            <div key={stat.label} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-              <div className="flex items-start justify-between mb-3">
-                <div className={`w-9 h-9 rounded-xl ${stat.color} flex items-center justify-center`}>
-                  <stat.icon size={16} />
+            <div key={stat.label} className="bg-white rounded-2xl p-3 sm:p-5 border border-slate-100 shadow-sm">
+              <div className="flex items-start justify-between mb-2 sm:mb-3">
+                <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl ${stat.color} flex items-center justify-center`}>
+                  <stat.icon size={15} />
                 </div>
                 {stat.trend === 'up' && <ArrowUpRight size={14} className="text-green-500" />}
               </div>
-              <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
-              <p className="text-xs font-semibold text-slate-600 mt-0.5">{stat.label}</p>
-              <p className="text-xs text-slate-400 mt-0.5">{stat.sub}</p>
+              <p className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">{stat.value}</p>
+              <p className="text-xs font-semibold text-slate-600 mt-0.5 leading-tight">{stat.label}</p>
+              <p className="text-xs text-slate-400 mt-0.5 hidden sm:block">{stat.sub}</p>
             </div>
           ))}
         </div>
@@ -144,12 +144,12 @@ export default function DoctorDashboardPage() {
           <div className="flex min-w-max">
             {TABS.map(t => (
               <button key={t.id} onClick={() => setTab(t.id)}
-                className={`relative flex items-center gap-2 px-5 py-4 text-sm font-semibold transition-all border-b-2 whitespace-nowrap ${
+                className={`relative flex items-center gap-1.5 px-3 sm:px-5 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold transition-all border-b-2 whitespace-nowrap ${
                   tab === t.id
                     ? 'text-brand-600 border-brand-600 bg-brand-50/50'
                     : 'text-slate-500 border-transparent hover:text-slate-700 hover:bg-slate-50'
                 }`}>
-                <t.icon size={15} />
+                <t.icon size={14} />
                 {t.label}
                 {t.badge && (
                   <span className="bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">

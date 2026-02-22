@@ -79,7 +79,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-slate-50">
       <Header />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16">
         {/* Welcome header */}
         <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
           <div>
@@ -105,18 +105,18 @@ export default function DashboardPage() {
           {/* Main content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4">
               {[
                 { label: 'Total Sessions', value: bookings.length,     icon: Calendar,  color: 'text-brand-600 bg-brand-50'   },
                 { label: 'This Month',     value: thisMonth.length,    icon: BarChart3, color: 'text-purple-600 bg-purple-50' },
                 { label: 'Therapists',     value: uniqueDoctors,       icon: User,      color: 'text-coral-600 bg-coral-50'   },
               ].map((stat) => (
-                <div key={stat.label} className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm">
+                <div key={stat.label} className="bg-white rounded-2xl p-3 sm:p-4 border border-slate-100 shadow-sm">
                   <div className={`w-9 h-9 rounded-xl ${stat.color} flex items-center justify-center mb-3`}>
                     <stat.icon size={16} />
                   </div>
-                  <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
-                  <p className="text-xs text-slate-500 mt-0.5">{stat.label}</p>
+                  <p className="text-xl sm:text-2xl font-bold text-slate-900">{stat.value}</p>
+                  <p className="text-xs text-slate-500 mt-0.5 leading-tight">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -230,7 +230,7 @@ export default function DashboardPage() {
                         <p className="mt-1 text-xs text-red-500">Reason: {booking.cancelReason}</p>
                       )}
                     </div>
-                    <p className="text-xs font-mono text-slate-300 shrink-0">#{booking.id}</p>
+                    <p className="text-xs font-mono text-slate-300 shrink-0 hidden sm:block">#{booking.id}</p>
                   </div>
                 ))}
               </div>
