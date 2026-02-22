@@ -40,7 +40,7 @@ export default function DownloadBanner() {
           </div>
 
           {/* Mock phone */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="hidden sm:flex justify-center lg:justify-end">
             <div className="relative w-64">
               <div className="bg-slate-800 rounded-[2.5rem] p-3 shadow-2xl border border-slate-700">
                 <div className="bg-white rounded-[2rem] overflow-hidden" style={{ aspectRatio: '9/16' }}>

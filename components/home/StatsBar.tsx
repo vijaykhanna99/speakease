@@ -16,7 +16,7 @@ export default function StatsBar() {
               key={i}
               className={`flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-0 lg:px-8 first:pl-0 last:pr-0 ${
                 i < 2 ? 'relative' : ''
-              }`}
+              } ${i === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
             >
               {/* Highlight badge for first two */}
               {i < 2 && (

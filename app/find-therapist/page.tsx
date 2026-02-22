@@ -90,7 +90,7 @@ export default function FindTherapistPage() {
       {/* Search Header */}
       <div className="bg-gradient-to-r from-brand-900 to-brand-800 pt-24 pb-8 px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-6">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
             Find the right therapist for you or your loved one
           </h1>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -382,7 +382,7 @@ function TherapistListCard({ therapist: t }: { therapist: Therapist }) {
                 <h3 className="font-bold text-slate-900">{t.name}</h3>
                 {t.verified && <Shield size={14} className="text-brand-600" />}
               </div>
-              <p className="text-sm text-slate-500">{t.title} · {t.experience} yrs exp · {t.city}</p>
+              <p className="text-sm text-slate-500 leading-snug">{t.title} · {t.experience} yrs exp · {t.city}</p>
 
               <div className="flex items-center gap-2 mt-1">
                 <div className="flex items-center gap-1">
